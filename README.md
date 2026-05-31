@@ -99,6 +99,7 @@ flowchart LR
 - **LangGraph orchestration:** the assistant routes questions to CSV tools, document RAG, or a hybrid path that runs CSV tool execution and document retrieval in parallel.
 - **Safe CSV tools:** common structured questions are answered through whitelisted tools instead of arbitrary SQL, pandas expressions, or vector search.
 - **Persisted table metadata:** CSV ingestion stores row count, columns, inferred types, numeric summaries, and head rows so the graph can choose tools with schema context.
+- **Grounded assistant prompt:** the LLM prompt defines a practical internal-operations persona, requires source-only answers, rejects prompt-injection instructions inside snippets, and tells the model to be explicit when evidence is missing.
 - **Lightweight scope:** no authentication, deployment layer, or complex document permissions beyond a simple `access_level` field.
 
 ## Database schema
